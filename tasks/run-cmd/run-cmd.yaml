@@ -62,9 +62,6 @@ spec:
         # Set the Jumpstarter lease environment variable
         export JMP_LEASE="$(params.jmp-lease-id)"
 
-        # Show the command that will be executed
-        echo "Running: $(params.jmp-jScript)"
-
         if [ "$(workspaces.source.bound)" == "true" ] ; then
           cd "$(workspaces.source.path)"
         fi
