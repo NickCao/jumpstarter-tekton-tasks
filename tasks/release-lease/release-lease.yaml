@@ -60,4 +60,4 @@ spec:
   workspaces:
     - mountPath: /root/.config/jumpstarter/clients
       name: jumpstarter-client-secret
-      
+      optional: true

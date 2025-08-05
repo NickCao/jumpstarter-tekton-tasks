@@ -65,7 +65,9 @@ spec:
         # Show the command that will be executed
         echo "Running: $(params.jmp-jScript)"
 
-        cd /workspace/source
+        if [ "$(workspaces.source.bound)" == "true" ] ; then
+          cd "$(workspaces.source.path)"
+        fi
 
         # Execute the script commands within the Jumpstarter shell
         jmp shell --lease "${JMP_LEASE}" <<-EOF
@@ -77,5 +79,7 @@ spec:
     - description: Workspace for mounting Jumpstarter client files.
       mountPath: "$(params.home)/.config/jumpstarter/clients"
       name: jumpstarter-client-secret
+      optional: true
     - description: Workspace containing the source code / build images
       name: source
+      optional: true

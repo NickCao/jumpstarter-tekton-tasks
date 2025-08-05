@@ -77,4 +77,4 @@ spec:
     - description: Workspace for mounting Jumpstarter client files.
       mountPath: /root/.config/jumpstarter/clients
       name: jumpstarter-client-secret
-      
+      optional: true
